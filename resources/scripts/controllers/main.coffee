@@ -6,5 +6,10 @@ angular.module('blisterApp')
     $scope.newItem = ''
 
     $scope.addItem = ->
-      $scope.items.push $scope.newItem
-      $scope.newItem = ''
+      if $scope.newItem.length > 0
+        $scope.items.push $scope.newItem
+        $scope.newItem = ''
+
+    $scope.remove = (idx) ->
+      if $scope.items.length > 0
+        $scope.items.splice(idx, 1)
